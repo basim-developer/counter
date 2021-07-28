@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="mb-4">Post adding </h3>
+            <form  id="addPostForm" [formGroup]="postForm" name="addPostForm" #myForm="ngForm" ngNativeValidate
+                (ngSubmit)="addPost()" autocomplete="off">
+
+                <div class="mb-3">
+                    <label for="title" class="font-weight-bold mt-2 mb-2">Title<sup>*</sup></label>
+                    <div class="input-group input-group-sm mb-3">
+                        <input type="text" class="form-control form-control-sm" max="50" name="title" id="title" formControlName="title" placeholder="Title" required />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="addDescription" class="font-weight-bold mt-2 mb-2">Description<sup>*</sup></label>
+                    <div class="input-group input-group-sm mb-3">
+                        <textarea  class="form-control form-control-sm" name="addDescription" formControlName="description" placeholder="Description" required>  </textarea>
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    <button type="submit" class="btn btn-primary" [disabled]="!postForm.valid" > Add Post </button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
